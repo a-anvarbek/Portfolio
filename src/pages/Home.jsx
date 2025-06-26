@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-import BG from "../images/favicon.png";
 import FrontEnd from "./FrontEnd";
+import Projects from "./Projects";
+
+import BG from "../images/favicon.png";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -33,10 +35,9 @@ const Img = styled.img`
   border-radius: 50%;
   border: 13px solid #555;
   box-shadow: 5px 5px 5px #111;
-  
-  &:hover{
-    
-      border: 13px solid #007CED;
+
+  &:hover {
+    border: 13px solid #007ced;
   }
 `;
 
@@ -100,6 +101,8 @@ const Home = () => {
       </Wrapper>
 
       <FrontEnd />
+
+      <Projects />
     </>
   );
 };

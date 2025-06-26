@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Title from "../components/Title";
 
 const Wrapper = styled.div`
-  margin-bottom: 90px;
   padding: 30px 40px;
 `;
 
