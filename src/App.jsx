@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const MainWrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 90px);
+  padding-bottom: 90px;
 `;
 
 function App() {
@@ -22,9 +22,11 @@ function App() {
     <Wrapper>
       <BrowserRouter>
         <Header />
+
         <MainWrapper>
           <MainRouter />
         </MainWrapper>
+        
         <Footer />
       </BrowserRouter>
     </Wrapper>

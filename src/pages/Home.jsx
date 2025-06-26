@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 import BG from "../images/favicon.png";
+import FrontEnd from "./FrontEnd";
 
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  /* background-color: green; */
   display: flex;
   align-items: center;
 `;
@@ -14,7 +14,6 @@ const Container = styled.div`
   width: calc(100% - 20%);
   height: 400px;
   margin: auto;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,11 +33,15 @@ const Img = styled.img`
   border-radius: 50%;
   border: 13px solid #555;
   box-shadow: 5px 5px 5px #111;
+  
+  &:hover{
+    
+      border: 13px solid #007CED;
+  }
 `;
 
 const Content = styled.div`
   width: calc(100% - 410px);
-  /* height: 400px; */
   display: flex;
   flex-direction: column;
 `;
@@ -66,36 +69,38 @@ const Button = styled.button`
 
 const Home = () => {
   return (
-    <Wrapper>
-      <Container>
-        <Logo>
-          <Img src={BG} alt="" />
-        </Logo>
+    <>
+      <Wrapper>
+        <Container>
+          <Logo>
+            <Img src={BG} alt="" />
+          </Logo>
 
-        <Content>
-          <P
-            color="#fff"
-            $fontSize="40px"
-            $fontWeight="700"
-          >
-            Briefly about me
-          </P>
+          <Content>
+            <P color="#fff" $fontSize="40px" $fontWeight="700">
+              Briefly about me
+            </P>
 
-          <P $fontSize="18px" $margin="20px 0">
-            Motivated and passionate Front-End Developer with a strong
-            foundation in building scalable and user-friendly web applications.
-            Committed to delivering high-quality code and continuously improving
-            skills through real-world projects.
-          </P>
+            <P $fontSize="18px" $margin="20px 0">
+              Motivated and passionate Front-End Developer with a strong
+              foundation in building scalable and user-friendly web
+              applications. Committed to delivering high-quality code and
+              continuously improving skills through real-world projects.
+            </P>
 
-          <Box>
-            <Button>Projects</Button>
+            <Box>
+              <Button>Projects</Button>
 
-            <Button $border="3px solid #fff" $color="#007CED">Contact</Button>
-          </Box>
-        </Content>
-      </Container>
-    </Wrapper>
+              <Button $border="3px solid #fff" $color="#007CED">
+                Contact
+              </Button>
+            </Box>
+          </Content>
+        </Container>
+      </Wrapper>
+
+      <FrontEnd />
+    </>
   );
 };
 

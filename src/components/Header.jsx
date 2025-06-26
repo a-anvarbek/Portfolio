@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import BG from "../images/favicon.png";
+import { useNavigate } from "react-router";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -51,10 +52,12 @@ const A = styled.a`
 `;
 
 const Header = () => {
+    const navigate = useNavigate();
+
   return (
     <Wrapper>
       <Container>
-        <Logo>
+        <Logo onClick={() => {navigate("/")}}>
           <Img src={BG} alt="" />
           <P>A-Anvarbek</P>
         </Logo>

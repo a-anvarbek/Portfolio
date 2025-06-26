@@ -5,6 +5,10 @@ const Wrapper = styled.div`
   height: 90px;
   padding: 30px 40px;
   border-top: 2px solid #555;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
 `;
 
 const Container = styled.div`
