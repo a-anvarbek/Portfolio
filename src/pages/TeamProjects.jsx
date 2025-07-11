@@ -3,14 +3,10 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import styled from "styled-components";
 
 import Title from "../components/Title";
-
-import Img1 from "../images/Img1.png";
-import Img2 from "../images/Img2.png";
-import Img3 from "../images/Img3.png";
-import Img4 from "../images/Img4.png";
-import Img5 from "../images/Img5.png";
-import Img6 from "../images/Img6.png";
-import Img7 from "../images/Img7.png";
+import Img8 from "../images/Img8.png";
+import Img9 from "../images/Img9.png";
+import Img10 from "../images/Img10.png";
+import Img11 from "../images/Img11.jpg";
 
 const Wrapper = styled.div`
   padding: 30px 40px;
@@ -77,6 +73,7 @@ const Card = styled.div`
   border-radius: 30px;
   border: 2px solid #555;
   overflow: hidden;
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -86,19 +83,22 @@ const Card = styled.div`
 
   @media (max-width: 768px) {
     width: 180px;
-    height: 350px;
+    height: 420px;
   }
 `;
 
 const Img = styled.img`
-  width: 100%;
-  height: 75%;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 30px 30px 0 0;
+  border-radius: 50%;
   border: none;
+  margin: 20px 0;
 
   @media (max-width: 768px) {
-    height: 70%;
+    height: 120px;
+    width: 120px;
+    margin: 15px 0 10px 0;
   }
 `;
 
@@ -111,14 +111,30 @@ const CardTitle = styled.h3`
   margin: 10px 0;
 
   @media (max-width: 768px) {
+    font-size: 22px;
+  }
+`;
+
+const Description = styled.div`
+  color: #fff;
+  padding: 0 15px;
+  text-align: left;
+  font-size: 16px;
+  height: 180px;
+  overflow: hidden;
+  line-height: 1.4;
+
+  @media (max-width: 768px) {
     font-size: 16px;
+    height: 160px;
+    padding: 0 12px;
   }
 `;
 
 const BoxBtn = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 10px 15px 20px;
+  margin: 10px 15px;
   gap: 10px;
 `;
 
@@ -170,56 +186,37 @@ const A = styled.a`
 
 const images = [
   {
-    img: Img1,
-    name: "Weather App",
-    url: "https://weather-app-a-anvarbek.netlify.app",
-    link: "https://github.com/a-anvarbek/Weather-react",
+    img: Img8,
+    name: "Edu-Connect",
+    url: "https://edu-connect-org.netlify.app",
+    link: "https://github.com/a-anvarbek/edu_connect",
+    text: `This project was created for courses to solve communication between teachers and parents. 
+    With this one platform, up to 15 courses can be managed.`,
   },
-
   {
-    img: Img2,
-    name: "Pet Finder",
-    url: "https://pets-react-test.netlify.app",
-    link: "https://github.com/a-anvarbek/Pets-react",
+    img: Img9,
+    name: "Coffee Men",
+    url: "https://coffeemen.netlify.app",
+    link: "https://github.com/a-anvarbek/Coffee-Men",
+    text: `Landing page for a coffee shop showing products, prices, and preparation methods. Responsive and stylish.`,
   },
-
   {
-    img: Img3,
-    name: "Blacknotes",
-    url: "https://blacknotes-app.netlify.app",
-    link: "https://github.com/a-anvarbek/Blacknotes-App",
+    img: Img10,
+    name: "Barbershop",
+    url: "https://alishersbarbershop.netlify.app",
+    link: "https://github.com/a-anvarbek/Alisher-s-Barbershop",
+    text: `A modern barbershop site that shows services, master info, and working hours.`,
   },
-
   {
-    img: Img4,
-    name: "Calculator",
-    url: "https://a-anvarbek.github.io/Calculator",
-    link: "https://github.com/a-anvarbek/Calculator",
-  },
-
-  {
-    img: Img5,
-    name: "Simon Game",
-    url: "https://a-anvarbek.github.io/Simon-Game",
-    link: "https://github.com/a-anvarbek/Simon-Game",
-  },
-
-  {
-    img: Img6,
-    name: "World of wisdom",
-    url: "https://a-anvarbek.github.io/World_of_Wisdom",
-    link: "https://github.com/a-anvarbek/World_of_Wisdom",
-  },
-
-  {
-    img: Img7,
-    name: "Dice Game",
-    url: "https://a-anvarbek.github.io/Dice-Game",
-    link: "https://github.com/a-anvarbek/Dice-Game",
+    img: Img11,
+    name: "Next Page",
+    url: "https://next-page-company1.netlify.app",
+    link: "https://github.com/a-anvarbek/Next-Page",
+    text: `Business website showcasing company services, profiles, and contact form.`,
   },
 ];
 
-const Projects = () => {
+const TeamProjects = () => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -235,8 +232,7 @@ const Projects = () => {
 
   return (
     <>
-      <Title name="Projects" />
-
+      <Title name="Team Projects" />
       <Wrapper>
         <Container>
           <Button onClick={() => scroll("left")}>
@@ -251,9 +247,8 @@ const Projects = () => {
             {images.map((image, index) => (
               <Card key={index}>
                 <Img src={image.img} alt={image.name} />
-
                 <CardTitle>{image.name}</CardTitle>
-
+                <Description>{image.text}</Description>
                 <BoxBtn>
                   <Btn>
                     <A
@@ -292,4 +287,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default TeamProjects;

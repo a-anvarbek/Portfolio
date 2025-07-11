@@ -1,25 +1,44 @@
 import { FaGithub, FaHtml5, FaJs, FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
-
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import Title from "../components/Title";
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const Wrapper = styled.div`
-  padding: 30px 40px;
+  padding: 50px 40px;
+  animation: ${fadeIn} 0.6s ease;
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
-  gap: 6%;
-  height: 350px;
-  overflow-y: auto;
+  gap: 5%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 const Column = styled.div`
   width: 47%;
-  height: 100%;
-  padding-right: 10px;
+  min-width: 300px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 `;
 
 const Section = styled.div`
@@ -30,56 +49,63 @@ const Row = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+  cursor: default;
+
+  &:hover {
+    transform: translateX(5px);
+  }
 `;
 
 const Icon = styled.div`
-  font-size: 34px;
+  font-size: 36px;
   color: #61dafb;
+  flex-shrink: 0;
 `;
 
 const TitleText = styled.p`
   margin-bottom: 25px;
-  font-size: 25px;
+  font-size: 26px;
   font-weight: bold;
-  color: #fff;
+  color: #ffffff;
 `;
 
 const TitleContent = styled.p`
   margin: 0;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bold;
-  color: #fff;
+  color: #ffffff;
 `;
 
 const Description = styled.p`
-  margin: 6px 0 0;
-  font-size: 18px;
-  color: #c0c0c0;
+  margin-top: 8px;
+  font-size: 17px;
+  color: #cccccc;
+  line-height: 1.5;
 `;
 
 const ProgressLabel = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
-  color: #fff;
+  font-size: 17px;
+  color: #ffffff;
   margin-bottom: 10px;
-  margin-top: 25px;
 `;
 
 const ProgressBar = styled.div`
-  height: 8px;
+  height: 10px;
   width: 100%;
   background-color: #2e2e2e;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
 `;
 
 const Progress = styled.div`
   height: 100%;
   width: ${(props) => props.$percent}%;
-  background-color: #2196f3;
-  border-radius: 5px;
+  background: linear-gradient(90deg, #007ced, #00c6ff);
+  border-radius: 10px;
   transition: width 0.6s ease;
 `;
 
@@ -152,7 +178,7 @@ const FrontEnd = () => {
             <Section>
               <TitleText>Coding Skills</TitleText>
               {codingSkills.map((skill, index) => (
-                <div key={index} style={{ marginBottom: "16px" }}>
+                <div key={index} style={{ marginBottom: "22px" }}>
                   <ProgressLabel>
                     <span>{skill.name}</span>
                     <span>{skill.percent}%</span>

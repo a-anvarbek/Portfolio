@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const MainWrapper = styled.div`
   width: 100%;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
 `;
 
 function App() {
